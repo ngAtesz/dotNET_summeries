@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week13A", "Week13A\Week13A.csproj", "{71B9601F-0C82-4281-9B98-3E978008E487}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week13A_2", "Week13A_2\Week13A_2.csproj", "{BABF4A90-2767-44CA-8BBF-498D33255E08}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Week13A_2_TimerEvents", "Week13A_2\Week13A_2_TimerEvents.csproj", "{BABF4A90-2767-44CA-8BBF-498D33255E08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
