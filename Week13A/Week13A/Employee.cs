@@ -55,7 +55,9 @@ namespace Week13A
 
         public object Clone()
         {
-            return MemberwiseClone();
+            Employee newEmployee = (Employee)this.MemberwiseClone();
+            newEmployee.Room = new Room(Room.Number);
+            return newEmployee;
         }
     }
 
