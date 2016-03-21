@@ -10,15 +10,13 @@ namespace Week13A
     {
         static void Main(string[] args)
         {
-            Person jozsi = new Person("Boda Jozsi", new DateTime(1975, 1, 1));
-            Person pakko = new Person("Monoczki Pakko", new DateTime(1980, 1, 15));
-            Employee atesz = new Employee("Molnar Atesz", new DateTime(1989, 5, 6), 1000000, "Software engineer");
-            atesz.Room = new Room(111);
-            atesz.Room.Number = 1;
+            Employee Kovacs = new Employee("Géza", DateTime.Now, 1000, "léhűtő");
+            Kovacs.Room = new Room(111);
+            Employee Kovacs2 = (Employee)Kovacs.Clone();
+            Kovacs2.Room.Number = 112;
 
-            Console.WriteLine(jozsi);
-            Console.WriteLine(pakko);
-            Console.WriteLine(atesz);
+            Console.WriteLine(Kovacs.ToString());
+            Console.WriteLine(Kovacs2.ToString());
             Console.ReadKey();
         }
     }

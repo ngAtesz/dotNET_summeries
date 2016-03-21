@@ -2,7 +2,7 @@
 
 namespace Week13A
 {
-    class Employee : Person
+    class Employee : Person, ICloneable
     {
         private int salary;
 
@@ -51,6 +51,11 @@ namespace Week13A
         public override string ToString()
         {
             return base.ToString() + String.Format(", salary: {0}, profession: {1}, room: {2}", salary, profession, Room.Number);
+        }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
         }
     }
 
