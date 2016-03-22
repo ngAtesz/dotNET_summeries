@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialCollections", "We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryCollections", "DictionaryCollections\DictionaryCollections.csproj", "{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LookupCollections", "LookupCollections\LookupCollections.csproj", "{2134CB1B-F585-42CA-B8B6-F68B49713AC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2134CB1B-F585-42CA-B8B6-F68B49713AC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2134CB1B-F585-42CA-B8B6-F68B49713AC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2134CB1B-F585-42CA-B8B6-F68B49713AC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2134CB1B-F585-42CA-B8B6-F68B49713AC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
