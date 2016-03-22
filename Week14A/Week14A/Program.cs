@@ -22,6 +22,20 @@ namespace Week14A
                 Console.WriteLine("From Queue: {0}",obj);
             }
 
+            Console.WriteLine("------------------------");
+
+            Stack stack = new Stack();
+            stack.Push("First");
+            stack.Push("Second");
+            stack.Push("Third");
+            stack.Push("Fourth");
+
+            while (stack.Count > 0)
+            {
+                object obj = stack.Pop();
+                Console.WriteLine("From stack: {0}", obj);
+            }
+
             Console.ReadKey();
         }
     }
