@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialCollections", "Week14A\SequentialCollections.csproj", "{53D796BA-7293-443B-A3D1-91107561235E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryCollections", "DictionaryCollections\DictionaryCollections.csproj", "{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{53D796BA-7293-443B-A3D1-91107561235E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53D796BA-7293-443B-A3D1-91107561235E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53D796BA-7293-443B-A3D1-91107561235E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8C14C3E-4E21-4314-BF4C-9DD5A2C9EFED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
