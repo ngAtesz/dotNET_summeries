@@ -4,33 +4,33 @@ namespace Week13A
 {
     class Employee : Person, ICloneable
     {
-        private int salary;
+        private int _salary;
 
         public int Salary
         {
             get
             {
-                return salary;
+                return _salary;
             }
 
             set
             {
-                salary = value;
+                _salary = value;
             }
         }
 
-        private string profession;
+        private string _profession;
 
         public string Profession
         {
             get
             {
-                return profession;
+                return _profession;
             }
 
             set
             {
-                profession = value;
+                _profession = value;
             }
         }
 
@@ -43,14 +43,14 @@ namespace Week13A
 
         public Employee(string name, DateTime birthDate, int salary, string profession) : base(name, birthDate)
         {
-            this.salary = salary;
-            this.profession = profession;
+            this._salary = salary;
+            this._profession = profession;
             Room = null;
         }
 
         public override string ToString()
         {
-            return base.ToString() + String.Format(", salary: {0}, profession: {1}, room: {2}", salary, profession, Room.Number);
+            return base.ToString() + String.Format(", salary: {0}, profession: {1}, room: {2}", _salary, _profession, Room.Number);
         }
 
         public object Clone()
@@ -63,24 +63,24 @@ namespace Week13A
 
     class Room
     {
-        private int number;
+        private int _number;
 
         public int Number
         {
             get
             {
-                return number;
+                return _number;
             }
 
             set
             {
-                number = value;
+                _number = value;
             }
         }
 
         public Room(int number)
         {
-            this.number = number;
+            this._number = number;
         }
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Week13A_3_SortString
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string s = "Microsoft .NET Framework 2.0 Application Development Foundation";
             string[] sa = s.Split(' ');

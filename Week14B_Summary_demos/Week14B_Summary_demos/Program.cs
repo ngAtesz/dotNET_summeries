@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Week14B_Summary_demos
 {
     class Program
     {
+        private static int watchNumber = 0;
         static void Main(string[] args)
         {
-            Demo1GetDriveInfo();
+            //Demo1GetDriveInfo();
 
             //Demo2WatchTheSystem();
 
-            //Demo3FileStreamWriting();
-            //Demo3FileStreamReading();
+            //Demo3WriteFileStream();
+            //Demo3ReadFileStream();
 
             //Demo4StreamReading();
             //Demo4StreamWriting();
 
-            //Demo5WriteIsolatedStorage();
-            //Demo5ReadFromIsolatedStorage();
+            Demo5WriteIsolatedStorage();
+            Demo5ReadFromIsolatedStorage();
             //Demo5CreateFolderIsolatedStorage();
-
+                
             Console.ReadLine();
         }
 
@@ -72,16 +69,22 @@ namespace Week14B_Summary_demos
         }
 
         static void IndicateFileChange(object sender, FileSystemEventArgs e)
-        {
+        {            
             Console.WriteLine("The content of the folder has been changed.");
+            Console.WriteLine("{0} is {1}", e.FullPath, e.ChangeType);
+            watchNumber++;
+            if (watchNumber >= 5)
+            {
+                ((FileSystemWatcher) sender).EnableRaisingEvents = false;
+            }
         }
         #endregion
 
-        private static void Demo3FileStreamReading()
+        private static void Demo3ReadFileStream()
         {
             FileStream aFile = File.Open("file.dat", FileMode.Open, FileAccess.Read);
 
-            int b = aFile.ReadByte();
+            int b = aFile.ReadByte(); 
             while (b != -1)
             {
                 Console.Write((char)b);
@@ -91,7 +94,7 @@ namespace Week14B_Summary_demos
             aFile.Close();
         }
 
-        private static void Demo3FileStreamWriting()
+        private static void Demo3WriteFileStream()
         {
             FileStream aFile = File.Create("file.dat");
 
@@ -102,6 +105,7 @@ namespace Week14B_Summary_demos
             aFile.WriteByte(79);
 
             aFile.Close();
+            Console.WriteLine("file.dat is created and filled with data");
         }
 
         #region Stream reading and writing
@@ -121,10 +125,12 @@ namespace Week14B_Summary_demos
             FileStream theFile = File.Open("C:\\boot.ini",
                                             FileMode.Open,
                                             FileAccess.Read);
-            StreamReader reader = new StreamReader(theFile);
-            Console.Write(reader.ReadToEnd());
-
-            reader.Close();
+            
+            using (var reader2 = new StreamReader(theFile))
+            {
+                Console.Write(reader2.ReadToEnd());
+            }
+            
             theFile.Close();
         }
         #endregion
@@ -132,33 +138,34 @@ namespace Week14B_Summary_demos
         #region IsolatedStorage
         private static void Demo5WriteIsolatedStorage()
         {
-            IsolatedStorageFile usrStorage = IsolatedStorageFile.GetUserStoreForAssembly();
-            IsolatedStorageFileStream usrFile = new IsolatedStorageFileStream("hello.txt",
-                                                                        FileMode.Create,
-                                                                        usrStorage);
-
-            StreamWriter usrWriter = new StreamWriter(usrFile);
-
-            usrWriter.WriteLine("Hello");
-
-            usrWriter.Close();
-            usrFile.Close();
-            usrStorage.Close();
+            using (var usrStorage = IsolatedStorageFile.GetUserStoreForAssembly())
+            {
+                using (var usrFile = new IsolatedStorageFileStream("hello.txt",
+                                                                    FileMode.Create,
+                                                                    usrStorage))
+                {
+                    using (var usrWriter = new StreamWriter(usrFile))
+                    {
+                        usrWriter.WriteLine("Hello Codecool");
+                    }
+                }
+            }
         }
 
         private static void Demo5ReadFromIsolatedStorage()
         {
-            IsolatedStorageFile usrStorage = IsolatedStorageFile.GetUserStoreForAssembly();
-            IsolatedStorageFileStream usrFile = new IsolatedStorageFileStream("hello.txt",
-                                                                        FileMode.Open,
-                                                                        usrStorage);
-            StreamReader usrReader = new StreamReader(usrFile);
-
-            Console.Write(usrReader.ReadToEnd());
-
-            usrReader.Close();
-            usrFile.Close();
-            usrStorage.Close();
+            using (var usrStorage = IsolatedStorageFile.GetUserStoreForAssembly())
+            {
+                using (var usrFile = new IsolatedStorageFileStream("hello.txt",
+                                                                    FileMode.Open,
+                                                                    usrStorage))
+                {
+                    using (var usrReader = new StreamReader(usrFile))
+                    {
+                        Console.Write(usrReader.ReadToEnd());
+                    }
+                }
+            }
         }
 
         private static void Demo5CreateFolderIsolatedStorage()

@@ -5,7 +5,7 @@ namespace Week13A_2
 {
     public partial class Form1 : Form
     {
-        Timer t;
+        Timer _t;
 
         public Form1()
         {
@@ -14,11 +14,11 @@ namespace Week13A_2
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            t = new System.Windows.Forms.Timer();
-            t.Interval = 1000;
-            t.Tick += new EventHandler(t_Tick);
+            _t = new Timer();
+            _t.Interval = 1000;
+            _t.Tick += new EventHandler(t_Tick);
 
-            t.Start();
+            _t.Start();
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace Week13A_2
             progressBar1.Value += 10;
             if (progressBar1.Value >= 100)
             {
-                t.Stop();
+                _t.Stop();
             }
         }
     }

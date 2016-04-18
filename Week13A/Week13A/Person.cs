@@ -4,33 +4,33 @@ namespace Week13A
 {
     class Person
     {
-        private string name;
+        private string _name;
 
         public string Name
         {
             get
             {
-                return name;
+                return _name;
             }
 
             set
             {
-                name = value;
+                _name = value;
             }
         }
 
-        private DateTime birthDate;
+        private DateTime _birthDate;
 
         public DateTime BirthDate
         {
             get
             {
-                return birthDate;
+                return _birthDate;
             }
 
             set
             {
-                birthDate = value;
+                _birthDate = value;
             }
         }
 
@@ -41,17 +41,17 @@ namespace Week13A
 
         public Person(string name, DateTime birthDate)
         {
-            this.name = name;
-            this.birthDate = birthDate;
+            this._name = name;
+            this._birthDate = birthDate;
         }
 
         public enum Genders : int { Male, Female };
 
-        public Genders gender;
+        public Genders Gender;
 
         public override string ToString()
         {
-            return String.Format("name: {0}, birthdate: {1}", this.name, this.birthDate);
+            return String.Format("name: {0}, birthdate: {1}", this._name, this._birthDate);
         }
     }
 }

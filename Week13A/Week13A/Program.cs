@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Week13A
 {
@@ -10,13 +6,13 @@ namespace Week13A
     {
         static void Main(string[] args)
         {
-            Employee Kovacs = new Employee("Géza", DateTime.Now, 1000, "léhűtő");
-            Kovacs.Room = new Room(111);
-            Employee Kovacs2 = (Employee)Kovacs.Clone();
-            Kovacs2.Room.Number = 112;
+            Employee kovacs = new Employee("Géza", DateTime.Now, 1000, "léhűtő");
+            kovacs.Room = new Room(111);
+            Employee kovacs2 = (Employee)kovacs.Clone();
+            kovacs2.Room.Number = 112;
 
-            Console.WriteLine(Kovacs.ToString());
-            Console.WriteLine(Kovacs2.ToString());
+            Console.WriteLine(kovacs.ToString());
+            Console.WriteLine(kovacs2.ToString());
             Console.ReadKey();
         }
     }
